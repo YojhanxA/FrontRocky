@@ -9,7 +9,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <Routes>
-        <Route path="/excel" element={<ExtraerExcel />} />
+        <Route path="/" element={<ExtraerExcel />} />
         <Route path="/factura" element={<Factura />} />
       </Routes>
     </Router>
