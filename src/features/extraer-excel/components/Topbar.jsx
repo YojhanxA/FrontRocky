@@ -50,9 +50,7 @@ export const Topbar = ({ onToggleSidebar }) => (
 
     <nav className="af-topnav">
       <a href="/">Inicio</a>
-      <a href="/asistencia" className="active">
-        Asistencia
-      </a>
+      <Link to="/carga"> Asistencia</Link>
       <Link to="/factura">Factura</Link>
       <a href="/reportes">Reportes</a>
       <a href="#bell" aria-label="Notificaciones" style={{ marginLeft: 10 }}>
