@@ -30,7 +30,7 @@ export const DataTable = ({
             />
           </svg>
           <input
-            placeholder="Buscar por nombre, código, documento…"
+            placeholder="Buscar por código, documento…"
             value={q}
             onChange={(e) => {
               setQ(e.target.value);
@@ -60,7 +60,7 @@ export const DataTable = ({
           {pageRows.length === 0 ? (
             <tr>
               <td
-                colSpan="7"
+                colSpan="6"
                 style={{
                   textAlign: "center",
                   padding: "28px",
@@ -80,16 +80,7 @@ export const DataTable = ({
                     {r.numeroCel || "-"}
                   </div>
                 </td>
-                <td>
-                  <div
-                    className="cell-trunc"
-                    title={r.nombre}
-                    style={{ maxWidth: 220 }}
-                  >
-                    {r.nombre}
-                  </div>
-                </td>
-                <td>{r.documento}</td>
+                <td>{r.documento || "-"}</td>
                 <td>
                   <BadgeNovedad value={r.novedad} />
                 </td>
