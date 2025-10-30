@@ -25,7 +25,6 @@ export const LoginPage = () => {
       <header className="bg-white shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
           <div className="flex items-center gap-3">
-            {/* Logo Rocky agrandado */}
             <img
               src={logoRocky}
               alt="Logo Rocky"

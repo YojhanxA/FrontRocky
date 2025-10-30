@@ -3,46 +3,52 @@ import { Icon } from "./icons";
 
 export const Sidebar = () => (
   <aside className="af-sidebar">
-    <div className="af-menu">
+    <nav className="af-menu">
       <div className="af-item">
         <span className="af-ico">
           <Icon.home />
-        </span>{" "}
-        Inicio
+        </span>
+        <span className="af-item-text">Inicio</span>
       </div>
+
       <div className="af-item active">
         <span className="af-ico">
           <Icon.upload />
-        </span>{" "}
-        Subida
+        </span>
+        <span className="af-item-text">Subida</span>
       </div>
+
       <div className="af-item">
         <span className="af-ico">
           <Icon.file />
-        </span>{" "}
-        Factura
+        </span>
+        <span className="af-item-text">Factura</span>
       </div>
+
       <div className="af-item">
         <span className="af-ico">
           <Icon.building />
-        </span>{" "}
-        Sede
+        </span>
+        <span className="af-item-text">Sede</span>
       </div>
+
       <div className="af-item">
         <span className="af-ico">
           <Icon.calendar />
-        </span>{" "}
-        Mes
+        </span>
+        <span className="af-item-text">Mes</span>
       </div>
+
       <div className="af-item">
         <span className="af-ico">
           <Icon.sheet />
-        </span>{" "}
-        Prefactura
+        </span>
+        <span className="af-item-text">Prefactura</span>
       </div>
-    </div>
+    </nav>
 
     <div
+      className="af-user"
       style={{
         display: "flex",
         alignItems: "center",
@@ -58,7 +64,7 @@ export const Sidebar = () => (
           background: "#e2e8f0",
         }}
       />
-      <small>@usuario</small>
+      <small className="af-item-text">@usuario</small>
     </div>
   </aside>
 );
