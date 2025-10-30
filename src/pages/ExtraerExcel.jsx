@@ -89,17 +89,7 @@ export const ExtraerExcel = () => {
     <>
       <h1 className="af-title">Subida de Datos / Base de Datos</h1>
 
-      <div className="af-grid">
-        <UploadCard
-          onUpload={handleSubir}
-          disabled={loadingImport || loadingExtract || rows.length === 0}
-          loadingImport={loadingImport}
-          loadingExtract={loadingExtract}
-          rowsLength={rows.length}
-        />
-        <ManualFormCard />
-      </div>
-
+      {/* 1️⃣ Barra del link arriba */}
       <SheetLinkBar
         sheetLink={sheetLink}
         onChange={setSheetLink}
@@ -110,6 +100,7 @@ export const ExtraerExcel = () => {
         msg={msg}
       />
 
+      {/* 2️⃣ Tabla en segundo lugar */}
       <DataTable
         q={q}
         setQ={setQ}
@@ -121,6 +112,18 @@ export const ExtraerExcel = () => {
         totalPages={totalPages}
         filteredCount={filtered.length}
       />
+
+      {/* 3️⃣ Subida de datos y registro manual al final */}
+      <div className="af-grid mt-8">
+        <UploadCard
+          onUpload={handleSubir}
+          disabled={loadingImport || loadingExtract || rows.length === 0}
+          loadingImport={loadingImport}
+          loadingExtract={loadingExtract}
+          rowsLength={rows.length}
+        />
+        <ManualFormCard />
+      </div>
     </>
   );
 };

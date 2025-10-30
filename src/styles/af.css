@@ -331,6 +331,37 @@ table.af-table {
 .af-badge-nov.danger {
   background: #fef2f2;
   color: #b91c1c;
+} /* Desktop: colapsado = solo iconos, expandido = icono + texto */
+@media (min-width: 992px) {
+  /* Sidebar ancho colapsado/expandido */
+  .af-sidebar {
+    width: 72px;
+    overflow: hidden;
+    transition: width 0.25s ease;
+  }
+  .af-sidebar-open .af-sidebar {
+    width: 240px;
+  }
+
+  /* Esconde los textos cuando NO está abierto (solo íconos) */
+  body:not(.af-sidebar-open) .af-item-text {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Centra los ítems cuando está colapsado */
+  body:not(.af-sidebar-open) .af-item {
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Opcional: ocultar otros textos dentro del sidebar cuando colapsa */
+  body:not(.af-sidebar-open) .af-user .af-item-text {
+    display: none;
+  }
 }
 
 /* ======= RESPONSIVE ======= */
@@ -404,7 +435,7 @@ table.af-table {
 
 /* Botón hamburguesa (solo móvil) */
 .af-menu-btn {
-  display: none;
+  display: inline-flex;
   border: 0;
   background: transparent;
   width: 36px;
