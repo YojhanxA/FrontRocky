@@ -104,8 +104,8 @@ export const ExtraerExcel = () => {
         loadingExtract={loadingExtract}
         loadingImport={loadingImport}
         msg={msg}
-        onUploadTop={handleSubir} // ⬅️ nuevo
-        canUploadTop={canUploadTop} // ⬅️ nuevo
+        onUploadTop={handleSubir}
+        canUploadTop={canUploadTop}
       />
 
       {/* 2️⃣ Tabla */}
