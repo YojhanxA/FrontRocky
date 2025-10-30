@@ -51,7 +51,6 @@ export const DataTable = ({
             <th style={{ minWidth: 70 }}>HORA</th>
             <th style={{ minWidth: 110 }}>FECHA</th>
             <th style={{ minWidth: 360 }}>NUMERO CEL</th>
-            <th style={{ minWidth: 220 }}>NOMBRE</th>
             <th style={{ minWidth: 140 }}>DOCUMENTO</th>
             <th style={{ minWidth: 100 }}>NOVEDAD</th>
             <th style={{ minWidth: 260 }}>CODIGO</th>
