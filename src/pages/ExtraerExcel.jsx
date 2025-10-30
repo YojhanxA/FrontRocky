@@ -1,4 +1,3 @@
-// src/pages/ExtraerExcel.jsx
 import React, { useMemo, useState } from "react";
 import { UploadCard } from "../features/extraer-excel/components/UploadCard";
 import { ManualFormCard } from "../features/extraer-excel/components/ManualFormCard";
@@ -85,11 +84,18 @@ export const ExtraerExcel = () => {
 
   const onExportCSV = () => exportCSV(filtered);
 
+  // habilitación del botón de subir (arriba)
+  const canUploadTop =
+    !!sheetLink.trim() &&
+    engineRows.length > 0 &&
+    !loadingImport &&
+    !loadingExtract;
+
   return (
     <>
       <h1 className="af-title">Subida de Datos / Base de Datos</h1>
 
-      {/* 1️⃣ Barra del link arriba */}
+      {/* 1️⃣ Barra del link (arriba) con botón Cargar BD */}
       <SheetLinkBar
         sheetLink={sheetLink}
         onChange={setSheetLink}
@@ -98,9 +104,11 @@ export const ExtraerExcel = () => {
         loadingExtract={loadingExtract}
         loadingImport={loadingImport}
         msg={msg}
+        onUploadTop={handleSubir} // ⬅️ nuevo
+        canUploadTop={canUploadTop} // ⬅️ nuevo
       />
 
-      {/* 2️⃣ Tabla en segundo lugar */}
+      {/* 2️⃣ Tabla */}
       <DataTable
         q={q}
         setQ={setQ}
@@ -113,7 +121,7 @@ export const ExtraerExcel = () => {
         filteredCount={filtered.length}
       />
 
-      {/* 3️⃣ Subida de datos y registro manual al final */}
+      {/* 3️⃣ Sección de carga y registro manual (abajo) */}
       <div className="af-grid mt-8">
         <UploadCard
           onUpload={handleSubir}
